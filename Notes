@@ -36,3 +36,4 @@ Incremental Replication (Artımlı Çoğaltma): Kesinti süresini azaltan anahta
 
 Cutover (Geçiş): Eski sistemi kapatıp yenisini açtığınız an.
 
+- CPU kullanım takibi yapmak için Cloud Eye kullanılır.
