@@ -1,0 +1,8 @@
+Huawei Cloud Servisleri
+- Compute (İşlem Gücü)
+  - Servis Adı: ECS(Elastic Cloud Server)
+  Olası Soru: "ECS nedir? AWS'teki EC2 veya Azure'daki VM ile temel farkları var mı?" (Cevap: Konsept olarak aynıdır, sanal sunucu hizmetidir). "Bir web sunucusu kurmak için ECS'yi nasıl yapılandırırsınız?
+- Storage(Depolama)
+  - Servis Adı: OBS (Object Storage Service)
+  OBS nedir? Ne tür veriler burada saklanır? 
+  S3 veya Blob Storage gibi bir nesne depolama hizmetidir. Resimler, videolar, loglar, statik web sistesi dosyaları gibi.
