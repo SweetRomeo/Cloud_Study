@@ -1,4 +1,5 @@
 Huawei Cloud Servisleri
+Temel Servisler(Compute, Storage, Networking)
 - Compute (İşlem Gücü)
   - Servis Adı: ECS(Elastic Cloud Server)
   Olası Soru: "ECS nedir? AWS'teki EC2 veya Azure'daki VM ile temel farkları var mı?" (Cevap: Konsept olarak aynıdır, sanal sunucu hizmetidir). "Bir web sunucusu kurmak için ECS'yi nasıl yapılandırırsınız?
@@ -6,3 +7,32 @@ Huawei Cloud Servisleri
   - Servis Adı: OBS (Object Storage Service)
   OBS nedir? Ne tür veriler burada saklanır? 
   S3 veya Blob Storage gibi bir nesne depolama hizmetidir. Resimler, videolar, loglar, statik web sistesi dosyaları gibi.
+  - Diğer servisler: EVS(Elastic Vloume Service) - Bu ECS'ler için disk hizmetidir.
+- Networking(Ağ)
+  - Servis Adı: VPC (Virtual Private Cloud)
+  - Olası Soru: "Huawei Cloud üzerinde izole bir ağı nasıl oluşturursunuz?" (Cevap: VPC kullanarak). "Public ve Private subnet nedir? Huawei VPC'de bunu nasıl yapılandırırsınız?"
+  - Diğer Servisler: ELB (Elastic Load Balance) - Yük dengeleyici. "ELB'nin 'layer 4' ve 'layer 7' modları arasındaki fark nedir?"
+
+
+
+Cloud Migration
+1-) Ağ bağımlılığı, datanın hacmi gibi bazı parametreleri analiz ederim.
+2-) CMS Aracını kurarım.
+3-) CMS üzerinden taşıma işlemini başlatırım.
+    - Blok Seviyesinde Göç: Bu, tüm diski blok blok kopyalar ve genellikle en hızlı ve tutarlı yöntemdir.
+    - Dosya Seviyesinde Göç: Sadece belirli dosyaları veya dizinleri taşımak için kullanılır.
+4-) Geçiş Anı ve Test (Cutover & Testing): Veri senkronizasyonu tamamlandığında ve kaynak sunucu ile hedef bulut ortamı eşitlendiğinde, planlı bir zamanda "cutover" işlemini gerçekleştiririm.
+5-) Doğrulama (Verification): Yeni bulut sunucusu (ECS) ayağa kalktığında, uygulamaların doğru çalıştığını, ağ bağlantılarının sorunsuz olduğunu ve verilerin eksiksiz geldiğini doğrulamak için kapsamlı testler yaparım.
+
+Not: Eğer taşınacak olan sadece bir veritabanı ise, CMS yerine doğrudan DRS (Data Replication Service) kullanmak daha mantıklı olabilir.
+
+CMS (Cloud Migration Service): Bu, sorunun "sihirli" cevabıdır.
+
+P2V / V2C: Fizikselden Buluta veya Sanaldan Buluta geçiş.
+
+Agent (Ajan/Yazılım): Kaynak sunucuya kurulan parça.
+
+Incremental Replication (Artımlı Çoğaltma): Kesinti süresini azaltan anahtar teknoloji.
+
+Cutover (Geçiş): Eski sistemi kapatıp yenisini açtığınız an.
+
